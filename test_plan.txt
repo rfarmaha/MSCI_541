@@ -1,0 +1,204 @@
+# Test Empty arguments:
+
+Input:
+python indexEngine.py
+
+Output:
+usage: indexEngine.py [-h] GZIP_FILE DOCUMENT_DIRECTORY
+indexEngine.py: error: the following arguments are required: GZIP_FILE, DOCUMENT_DIRECTORY
+
+
+Input:
+python getDoc.py
+
+Output:
+usage: getDoc.py [-h] DOCUMENT_DIRECTORY DOC_NO OR ID SEARCH_PARAMETER
+getDoc.py: error: the following arguments are required: DOCUMENT_DIRECTORY, DOC_NO OR ID, SEARCH_PARAMETER
+
+
+# Test indexEngine directory already exists:
+
+Input:
+python indexEngine.py ~/MSCI_541/latimes.gz  ~/MSCI_541/documents
+
+Output:
+Traceback (most recent call last):
+  File "indexEngine.py", line 39, in <module>
+    os.makedirs(directory_path, exist_ok=False)
+  File "/Users/ramandeepfarmaha/MSCI_541/venv/bin/../lib/python3.4/os.py", line 237, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: '/Users/ramandeepfarmaha/MSCI_541/documents'
+
+# Test indexEngine with no directory existing:
+
+Input:
+python indexEngine.py ~/MSCI_541/latimes.gz  ~/MSCI_541/documents
+
+Output:
+
+.
+.
+.
+Processed Document: 131888
+Processed Document: 131889
+Processed Document: 131890
+Processed Document: 131891
+Processed Document: 131892
+Processed Document: 131893
+Processed Document: 131894
+Processed Document: 131895
+Processed Document: 131896
+
+
+# Test getDoc by docno
+
+Input:
+python getDoc.py ~/MSCI_541/documents docno LA010189-0018
+
+Output:
+docno: LA010189-0018
+internal id: 18
+date: January 01, 1989
+headline: OUTTAKES: MATERIAL MOLL
+raw document:
+<DOC>
+<DOCNO> LA010189-0018 </DOCNO>
+<DOCID> 42 </DOCID>
+<DATE>
+<P>
+January 1, 1989, Sunday, Home Edition
+</P>
+</DATE>
+<SECTION>
+<P>
+Calendar; Page 24; Calendar Desk
+</P>
+</SECTION>
+<LENGTH>
+<P>
+101 words
+</P>
+</LENGTH>
+<HEADLINE>
+<P>
+OUTTAKES: MATERIAL MOLL
+</P>
+</HEADLINE>
+<BYLINE>
+<P>
+By Craig Modderno
+</P>
+</BYLINE>
+<TEXT>
+<P>
+Madonna and Beatty?
+</P>
+<P>
+A Madonna rep tells us -- and production sources confirm -- that the blond
+bombshell will play '30s nightclub singer-gangster's moll Breathless Mahoney
+opposite Warren, who has the title role in the long-delayed "Dick Tracy."
+</P>
+<P>
+As Breathless she'll sing at least two original songs, yet unwritten. And
+she'll attempt to seduce the straight-laced copper away from lady love Tess
+Trueheart, who is yet to be cast.
+</P>
+<P>
+Beatty produces/directs the $30 million-plus Touchstone film, to begin
+production in February, to be filmed on the Universal lot, according to
+sources. Craig Modderno
+</P>
+</TEXT>
+<TYPE>
+<P>
+Column
+</P>
+</TYPE>
+</DOC>
+
+# Test getDoc by id
+Input:
+python getDoc.py ~/MSCI_541/documents id 18
+docno: LA010189-0018
+internal id: 18
+date: January 01, 1989
+headline: OUTTAKES: MATERIAL MOLL
+raw document:
+<DOC>
+<DOCNO> LA010189-0018 </DOCNO>
+<DOCID> 42 </DOCID>
+<DATE>
+<P>
+January 1, 1989, Sunday, Home Edition
+</P>
+</DATE>
+<SECTION>
+<P>
+Calendar; Page 24; Calendar Desk
+</P>
+</SECTION>
+<LENGTH>
+<P>
+101 words
+</P>
+</LENGTH>
+<HEADLINE>
+<P>
+OUTTAKES: MATERIAL MOLL
+</P>
+</HEADLINE>
+<BYLINE>
+<P>
+By Craig Modderno
+</P>
+</BYLINE>
+<TEXT>
+<P>
+Madonna and Beatty?
+</P>
+<P>
+A Madonna rep tells us -- and production sources confirm -- that the blond
+bombshell will play '30s nightclub singer-gangster's moll Breathless Mahoney
+opposite Warren, who has the title role in the long-delayed "Dick Tracy."
+</P>
+<P>
+As Breathless she'll sing at least two original songs, yet unwritten. And
+she'll attempt to seduce the straight-laced copper away from lady love Tess
+Trueheart, who is yet to be cast.
+</P>
+<P>
+Beatty produces/directs the $30 million-plus Touchstone film, to begin
+production in February, to be filmed on the Universal lot, according to
+sources. Craig Modderno
+</P>
+</TEXT>
+<TYPE>
+<P>
+Column
+</P>
+</TYPE>
+</DOC>
+
+# Test getDoc incorrect ID
+Input:
+python getDoc.py ~/MSCI_541/documents id -1
+
+Output:
+Traceback (most recent call last):
+  File "getDoc.py", line 54, in <module>
+    retrieve_by_id(gzip_path, search_param)
+  File "getDoc.py", line 45, in retrieve_by_id
+    docno = doc_id_no[int(param)]
+KeyError: -1
+
+# Test getDoc incorrect docno
+Input:
+python getDoc.py ~/MSCI_541/documents docno LA010189-1101
+
+Output:
+Traceback (most recent call last):
+  File "getDoc.py", line 52, in <module>
+    retrieve_by_docno(gzip_path, search_param)
+  File "getDoc.py", line 35, in retrieve_by_docno
+    with open(file_path, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ramandeepfarmaha/MSCI_541/documents/89/01/01/1101.p'

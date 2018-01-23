@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+"""
+File: indexEngine.py
+Author: Ramandeep Farmaha
+Date Last Modified: January 22nd, 2018
+Python Version: 3.4
+
+Indexes documents from the LA Times dataset by DOCNO and custom ID. For University of Waterloo course MSCI 541
+"""
+
 import argparse
 import gzip
 import os.path
@@ -73,17 +83,22 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             raw_document_string = "".join(raw_document)
             document.raw_document = raw_document_string
 
-            # Insert into directory YY/MM/DD
+            # Insert into docno to id map
+            doc_id_no[doc_id] = document.docno
+
+            # Insert into directory  as YY/MM/DD/NNNN.p
             date_obj = time.strptime(document.date, '%B %d, %Y')
             formatted_date = time.strftime('/%y/%m/%d/', date_obj)
+
             file_path = directory_path + formatted_date
             os.makedirs(file_path, exist_ok=True)
             file_path += document.docno.split('-')[1]
             file_path += '.p'
-            doc_id_no[doc_id] = document.docno
+
             with open(file_path, "wb") as text_file:
                 pickle.dump(document, text_file)
             print("Processed Document: {}".format(doc_id))
+
             # clear the raw document list
             raw_document.clear()
 

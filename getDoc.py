@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+"""
+File: getDoc.py
+Author: Ramandeep Farmaha
+Date Last Modified: January 22nd, 2018
+Python Version: 3.4
+
+Retrieves documents from LA Times dataset given index and either DOCNO or internal ID. For University of Waterloo course
+MSCI 541.
+"""
+
 import argparse
 import pickle
 
@@ -16,7 +27,9 @@ def parse_args():
 
 
 def retrieve_by_docno(path, param):
+    """Retrieve document and associated metadata from DOCNO"""
     params = param.split("-")
+    # Document with DOCNO LA%DD%MM%YY-NNNN is stored in path/YY/MM/DD/NNNN.p
     file_path = "/{}/{}/{}/{}.p".format(params[0][-2:], params[0][-4:-2], params[0][-6:-4], params[1])
     file_path = path + file_path
     with open(file_path, 'rb') as f:
@@ -26,6 +39,7 @@ def retrieve_by_docno(path, param):
 
 
 def retrieve_by_id(path, param):
+    """Retrieve documetn and associated metadata from internal ID"""
     with open(path + IDX_PATH, 'rb') as file:
         doc_id_no = pickle.load(file)
         docno = doc_id_no[int(param)]
