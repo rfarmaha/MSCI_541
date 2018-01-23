@@ -26,8 +26,7 @@ def parse_args():
 gzip_path, directory_path = parse_args()
 
 # Create the directory if it doesn't exist, else throw an error
-# TODO: remove exist_ok
-os.makedirs(directory_path, exist_ok=True)
+os.makedirs(directory_path, exist_ok=False)
 
 doc_id_no = {}
 
