@@ -80,10 +80,9 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             file_path = directory_path + formatted_date
             os.makedirs(file_path, exist_ok=True)
             file_path += document.docno.split('-')[1]
-            file_path += '.txt'
+            file_path += '.p'
             doc_id_no[doc_id] = document.docno
-            with open(file_path, "w") as text_file:
-                text_file.write(raw_document_string)
+            with open(file_path, "wb") as text_file:
                 pickle.dump(document, text_file)
             print("Processed Document: {}".format(doc_id))
             # clear the raw document list
@@ -91,5 +90,5 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
 
 
 doc_id_no_path = directory_path + IDX_PATH
-pickle.dump(document, open(doc_id_no_path, 'wb'))
+pickle.dump(doc_id_no, open(doc_id_no_path, 'wb'))
 

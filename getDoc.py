@@ -15,20 +15,21 @@ def parse_args():
     return args.directory, args.is_docno == 'docno', args.search_param
 
 
-def retrieve_by_docno(gzip_path, search_param):
-    params = search_param.split("-")
-    file_path = "/{}/{}/{}/{}.txt".format(params[0][-2:], params[0][-4:-2], params[0][-6:-4], params[1])
-    file_path = gzip_path + file_path
-    with open(file_path, "rt") as text_file:
-        for line in text_file:
-            print(line.rstrip())
+def retrieve_by_docno(path, param):
+    params = param.split("-")
+    file_path = "/{}/{}/{}/{}.p".format(params[0][-2:], params[0][-4:-2], params[0][-6:-4], params[1])
+    file_path = path + file_path
+    with open(file_path, 'rb') as f:
+        document = pickle.load(f)
+        print("docno: {}\ninternal id: {}\ndate: {}\nheadline: {}\nraw document:\n{}"
+              .format(document.docno, document.doc_id, document.date, document.headline, document.raw_document))
 
 
-def retrieve_by_id(gzip_path, search_param):
-    with open(gzip_path + IDX_PATH, 'r') as file:
+def retrieve_by_id(path, param):
+    with open(path + IDX_PATH, 'rb') as file:
         doc_id_no = pickle.load(file)
-        docno = doc_id_no[search_param]
-        return retrieve_by_docno(gzip_path, docno)
+        docno = doc_id_no[int(param)]
+        return retrieve_by_docno(path, docno)
 
 
 gzip_path, is_docno, search_param = parse_args()
