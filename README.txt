@@ -1,5 +1,5 @@
 MSCI 541 Assignment 1 Files
-Author: Ramandeep Farmaha
+Author: Ramandeep Farmaha 20516974
 
 How to run:
 - Ensure you have Python3 installed on your machine

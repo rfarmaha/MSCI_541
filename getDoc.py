@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 File: getDoc.py
-Author: Ramandeep Farmaha
+Author: Ramandeep Farmaha 20516974
 Date Last Modified: January 22nd, 2018
 Python Version: 3.4
 
