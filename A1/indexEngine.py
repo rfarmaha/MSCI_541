@@ -33,6 +33,20 @@ def parse_args():
     return args.gzip, args.directory
 
 
+def create_raw_text_doc(doc_id, document, directory_path):
+    date_obj = time.strptime(document.date, '%B %d, %Y')
+    formatted_date = time.strftime('/%y/%m/%d/', date_obj)
+
+    file_path = directory_path + formatted_date
+    os.makedirs(file_path, exist_ok=True)
+    file_path += document.docno.split('-')[1]
+    file_path += '.p'
+
+    with open(file_path, "wb") as text_file:
+        pickle.dump(document, text_file)
+    print("Processed Document: {}".format(doc_id))
+
+
 gzip_path, directory_path = parse_args()
 
 # Create the directory if it doesn't exist, else throw an error
@@ -86,18 +100,8 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             # Insert into docno to id map
             doc_id_no[doc_id] = document.docno
 
-            # Insert into directory  as YY/MM/DD/NNNN.p
-            date_obj = time.strptime(document.date, '%B %d, %Y')
-            formatted_date = time.strftime('/%y/%m/%d/', date_obj)
-
-            file_path = directory_path + formatted_date
-            os.makedirs(file_path, exist_ok=True)
-            file_path += document.docno.split('-')[1]
-            file_path += '.p'
-
-            with open(file_path, "wb") as text_file:
-                pickle.dump(document, text_file)
-            print("Processed Document: {}".format(doc_id))
+            # Insert into directory as YY/MM/DD/NNNN.p
+            create_raw_text_doc(doc_id, document, directory_path)
 
             # clear the raw document list
             raw_document.clear()
