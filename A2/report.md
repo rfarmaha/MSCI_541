@@ -191,13 +191,32 @@ The first, second, and fourth articles all contain the word 'car', and thus they
 
 Rank | Docno | Relevance | Explanation
 --- | --- | --- | --- 
-1 | LA021890-0100 | df | d
-2 | LA090490-0093 | df | d
-3 | LA050789-0068 | df | 
-4 | LA122389-0060 | df | 
-5 | LA111289-0073 | df | 
-6 | LA121890-0117 | df | 
-7 | LA040490-0003 | df | 
-8 | LA051390-0170 | df | 
-9 | LA052190-0065 | df | 
-10 | LA050590-0114 | df | 
+1 | LA021890-0100 | Non-relevant | Minorities refers to minorities of adults, not foreign minorities
+2 | LA090490-0093 | Non-relevant | No match for 'foreign minorities'
+3 | LA050789-0068 | Non-relevant | Document discusses countries other than Germany
+4 | LA122389-0060 | Non-relevant | Article focuses on Romania
+5 | LA111289-0073 | Non-relevant | Articles just mentions plight of minorities
+6 | LA121890-0117 | Non-relevant | Examines many countries, not just Germany
+7 | LA040490-0003 | Non-relevant | Focuses on Lithuanian politics
+8 | LA051390-0170 | Non-relevant | Article concerns the USSR
+9 | LA052190-0065 | Non-relevant | Article pertains Romania
+10 | LA050590-0114 | Non-relevant | Article is about Latvian politics
+
+**Precision:** 0.0
+
+### Topic 403: 'osteoporosis'
+
+Rank | Docno | Relevance | Explanation
+--- | --- | --- | --- 
+1 | LA120689-0083 | Non-relevant | Relates to estrogen cream's effects on osteoperosis
+2 | LA111589-0004 | Non-relevant | Article is on a study concerning menopause
+3 | LA051490-0120 | Relevant | Document discusses taking an oral fluoride supplement to improve bone density
+4 | LA110490-0091 | Non-relevant | Briefly mentions osteoporosis in passing; mostly about HGH
+5 | LA101890-0267 | Relevant | Article discusses Didronel, an oral supplement for bone density loss
+6 | LA032489-0093 | Non-relevant | Mentions osteoporosis in passing
+7 | LA071290-0133 | Relevant | Focuses on Etidronate, which is a drug used to abate osteoporosis
+8 | LA092890-0067 | Relevant | Article discusses calcium supplements for slowing bone loss
+9 | LA120390-0005 | Non-relevant | Article briefly mentions osteoporosis
+10 | LA030689-0082 | Non-relevant | Talks about osteoporosis, but does not discuss dietary intakes
+
+**Precision:** 0.4

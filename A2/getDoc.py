@@ -29,8 +29,8 @@ def parse_args():
 def retrieve_by_docno(path, param):
     """Retrieve document and associated metadata from DOCNO"""
     params = param.split("-")
-    # Document with DOCNO LA%DD%MM%YY-NNNN is stored in path/YY/MM/DD/NNNN.p
-    file_path = "/{}/{}/{}/{}.p".format(params[0][-2:], params[0][-4:-2], params[0][-6:-4], params[1])
+    # Document with DOCNO LA%MM%DD%YY-NNNN is stored in path/YY/MM/DD/NNNN.p
+    file_path = "/{}/{}/{}/{}.p".format(params[0][-2:], params[0][-6:-4], params[0][-4:-2], params[1])
     file_path = path + file_path
     with open(file_path, 'rb') as f:
         document = pickle.load(f)

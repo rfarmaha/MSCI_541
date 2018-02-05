@@ -172,11 +172,11 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             # Insert into docno to id map
             doc_id_no[doc_id] = document.docno
 
-            # Insert into directory as YY/MM/DD/NNNN.p
-            create_raw_text_doc(doc_id, document, directory_path)
-
             # Build document metadata
             build_doc_metadata(document)
+
+            # Insert into directory as YY/MM/DD/NNNN.p
+            create_raw_text_doc(doc_id, document, directory_path)
 
             # Build in-memory inversion index
             build_inversion_index(doc_id, document)
