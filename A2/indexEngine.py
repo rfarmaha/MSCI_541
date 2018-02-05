@@ -16,12 +16,12 @@ import re
 import time
 
 from document import Document
+from collections import Counter
 
 DOC_OPEN_TAG = "<DOC>"
 DOC_CLOSE_TAG = "</DOC>"
 DOC_NO_TAG = "<DOCNO>"
 HEADLINE_TAG = "<HEADLINE>"
-IDX_PATH = '/doc_id_no.p'
 
 
 def parse_args():
@@ -47,31 +47,96 @@ def create_raw_text_doc(doc_id, document, directory_path):
     print("Processed Document: {}".format(doc_id))
 
 
+def get_match_strip_tags(re_search, text, re_strip_tags, re_strip_close_tags):
+    matches = re.search(re_search, text)
+    if matches:
+        match = matches.group().strip()
+        match = re_strip_tags.sub('', match)
+        match = re_strip_close_tags.sub('', match)
+        return match
+    return ''
+
+
+def build_doc_metadata(document):
+    text = document.raw_document
+    re_strip_tags = re.compile('<\w+>\n*')
+    re_strip_close_tags = re.compile('<\/\w+>\n*')
+
+    # Get HEADLINE information from raw document
+    headline_match = re.compile('<HEADLINE>[\s\S]+<\/HEADLINE>')
+    document.headline = get_match_strip_tags(headline_match, text, re_strip_tags, re_strip_close_tags)
+
+    # Get GRAPHIC information from raw document
+    headline_match = re.compile('<GRAPHIC>[\s\S]+<\/GRAPHIC>')
+    document.graphic = get_match_strip_tags(headline_match, text, re_strip_tags, re_strip_close_tags)
+
+    # Get TEXT information from raw document
+    headline_match = re.compile('<TEXT>[\s\S]+<\/TEXT>')
+    document.text = get_match_strip_tags(headline_match, text, re_strip_tags, re_strip_close_tags)
+
+
+def build_inversion_index(doc_id, document):
+    tokens = tokenize(document)
+    document.length = len(tokens)
+
+    token_ids = convert_tokens_to_ids(tokens)
+    add_to_postings(doc_id, token_ids)
+
+
+def tokenize(document):
+    tokens = []
+    for text in document.headline, document.graphic, document.text:
+        # Lowercase and split on non-alphanumerics
+        text = text.lower()
+        text_tokens = re.split('[\W]', text)
+        tokens += text_tokens
+
+    # Remove empty strings in resulting tokens list
+    tokens = list(filter(None, tokens))
+    return tokens
+
+
+def convert_tokens_to_ids(tokens):
+    token_ids = []
+    for token in tokens:
+        if token in token_token_id:
+            token_ids.append(token_token_id[token])
+        else:
+            token_id = len(token_token_id)
+            token_token_id[token] = token_id
+            token_id_token[token_id] = token
+            token_ids.append(token_id)
+    return token_ids
+
+
+def add_to_postings(doc_id, token_ids):
+    token_counts = Counter(token_ids)
+
+    for token_id, token_count in token_counts.items():
+        if token_id not in token_id_postings:
+            token_id_postings[token_id] = []
+        token_id_postings[token_id].append(doc_id)
+        token_id_postings[token_id].append(token_count)
+
+
 gzip_path, directory_path = parse_args()
 
 # Create the directory if it doesn't exist, else throw an error
 os.makedirs(directory_path, exist_ok=False)
 
+# Create global dictionaries
 doc_id_no = {}
+token_id_token = {}
+token_token_id = {}
+token_id_postings = {}  # Token ID => Postings List (List of docIDs followed by count of term in those docs)
 
 with gzip.open(gzip_path, mode='rt') as gzip_file:
     document = None
     raw_document = []
     doc_id = 0
-    headline = -1
 
     for line in gzip_file:
         raw_document.append(line)
-
-        # Add headline if applicable
-        if headline > 0:
-            headline -= 1
-        elif headline == 0:
-            r_line = line.rstrip()
-            if r_line[-1:] == ';':
-                r_line = r_line[:-1]
-            document.headline = r_line
-            headline = -1
 
         if DOC_OPEN_TAG in line:
             # Create a Document object
@@ -90,9 +155,6 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             formatted_date = time.strftime('%B %d, %Y', date_obj)
             document.date = formatted_date
 
-        elif HEADLINE_TAG in line:
-            headline = 1
-
         elif DOC_CLOSE_TAG in line:
             raw_document_string = "".join(raw_document)
             document.raw_document = raw_document_string
@@ -103,10 +165,22 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             # Insert into directory as YY/MM/DD/NNNN.p
             create_raw_text_doc(doc_id, document, directory_path)
 
+            # Build document metadata
+            build_doc_metadata(document)
+
+            # Build in-memory inversion index
+            build_inversion_index(doc_id, document)
+
             # clear the raw document list
             raw_document.clear()
 
+# Create all pickles
+doc_id_no_path = directory_path + '/doc_id_no.p'
+token_id_token_path = directory_path + '/token_id_token.p'
+token_token_id_path = directory_path + '/token_token_id.p'
+token_id_postings_path = directory_path + '/token_id_postings.p'
 
-doc_id_no_path = directory_path + IDX_PATH
 pickle.dump(doc_id_no, open(doc_id_no_path, 'wb'))
-
+pickle.dump(token_id_token, open(doc_id_no_path, 'wb'))
+pickle.dump(token_token_id, open(doc_id_no_path, 'wb'))
+pickle.dump(token_id_postings, open(doc_id_no_path, 'wb'))

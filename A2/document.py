@@ -7,3 +7,6 @@ class Document:
         self.date = ""
         self.headline = ""
         self.raw_document = ""
+        self.graphic = ""
+        self.text = ""
+        self.length = 0
