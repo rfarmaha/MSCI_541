@@ -36,7 +36,7 @@ if not os.path.exists(index):
 
 # Check if queries file exists
 if not os.path.exists(queries):
-    print("Index file doesn't exist in the specified location! Please correct this issue.")
+    print("Queries file doesn't exist in the specified location! Please correct this issue.")
     exit(1)
 
 # Load the queries from the query file
@@ -64,16 +64,19 @@ except OSError:
 with open(output, 'w') as o:
     for number, query in query_dict.items():
         tokens = tokenize(query)
-        result_set = set()
 
-        for t in tokens:
+        result_set = None
+
+        for i, t in enumerate(tokens):
             token_id = token_to_token_id[t]
             postings_list = token_id_to_postings[token_id]
+
             # Postings list uses following schema: [doc_id, token_count] i.e. every even entry is doc_id, odd is token_count
-            if result_set:
-                result_set = result_set.intersection(postings_list[::2])
+            if i == 0:
+                # First token
+                result_set = set(postings_list[::2])
             else:
-                result_set = result_set.union(set(postings_list[::2]))
+                result_set = result_set.intersection(postings_list[::2])
 
         doc_no_rank_list = [(i, doc_id_no[doc_id]) for i, doc_id in enumerate(result_set, start=1)]
 

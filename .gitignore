@@ -1,4 +1,4 @@
-documents/*
+*documents/*
 *.idea*
 *.gz
 venv/*

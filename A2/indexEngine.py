@@ -153,7 +153,7 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             document = Document()
         elif DOC_NO_TAG in line:
             # Generate document internal id
-            docno = re.search('LA\d{6}-\d{4}', line).group()
+            docno = re.search('(LA|RF)\d{6}-\d{4}', line).group()
             docno_list = docno.split('-')
             date = docno_list[0][2:]
             doc_id += 1
