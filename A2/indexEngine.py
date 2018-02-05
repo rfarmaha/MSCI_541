@@ -181,6 +181,6 @@ token_token_id_path = directory_path + '/token_token_id.p'
 token_id_postings_path = directory_path + '/token_id_postings.p'
 
 pickle.dump(doc_id_no, open(doc_id_no_path, 'wb'))
-pickle.dump(token_id_token, open(doc_id_no_path, 'wb'))
-pickle.dump(token_token_id, open(doc_id_no_path, 'wb'))
-pickle.dump(token_id_postings, open(doc_id_no_path, 'wb'))
+pickle.dump(token_id_token, open(token_id_token_path, 'wb'))
+pickle.dump(token_token_id, open(token_token_id_path, 'wb'))
+pickle.dump(token_id_postings, open(token_id_postings_path, 'wb'))
