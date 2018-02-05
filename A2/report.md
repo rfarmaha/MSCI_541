@@ -1,7 +1,7 @@
 # MSCI 541 HW2 Report
 Ramandeep Farmaha 20516974
 
-### Problem 2
+## Problem 2
 
 In order to demonstrate that Boolean AND retrieval is functioning properly, the following test document was created. The 
 test document comprises of 4 individual articles in a format similar to the LATimes.gzip file:
@@ -162,26 +162,42 @@ After performing the Boolean AND retrieval script, the following was outputted:
 5 q0 RF020418-0004 3 0 rfarmahaAND
 ```
 
-#### Topic 1: 'electric car'
+### Topic 1: 'electric car'
 
 Although the first, third and fourth articles in the document collection all contain the word 'car', only the first
 document contains both 'electric' and 'car'. Thus, the Boolean AND script outputted only the first article for the query.
 
-#### Topic 2: 'touchscreen display'
+### Topic 2: 'touchscreen display'
 
 Both the first and second articles contain the words 'touchscreen' and 'display', while the other two articles don't
 contain either word.
 
-#### Topic 3: 'car accident'
+### Topic 3: 'car accident'
 
 Similar to the first topic, 3 out of the 4 articles contain the word 'car', but only the fourth article contains the word
 'accident', thut it is the only result in the output.
 
-#### Topic 4: 'coffee'
+### Topic 4: 'coffee'
 
 Only the fourth article has the term 'coffee', and thus it is the only one outputted.
 
-#### Topic 5: 'car'
+### Topic 5: 'car'
 
 The first, second, and fourth articles all contain the word 'car', and thus they're outputted.
 
+## Problem 3
+
+### Topic 401: 'foreign minorities, Germany'
+
+Rank | Docno | Relevance | Explanation
+--- | --- | --- | --- 
+1 | LA021890-0100 | df | d
+2 | LA090490-0093 | df | d
+3 | LA050789-0068 | df | 
+4 | LA122389-0060 | df | 
+5 | LA111289-0073 | df | 
+6 | LA121890-0117 | df | 
+7 | LA040490-0003 | df | 
+8 | LA051390-0170 | df | 
+9 | LA052190-0065 | df | 
+10 | LA050590-0114 | df | 
