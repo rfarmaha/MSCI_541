@@ -138,7 +138,7 @@ if not os.path.exists(gzip_path):
 doc_id_no = {}
 token_id_token = {}
 token_token_id = {}
-token_id_postings = {}  # Token ID => Postings List (List of docIDs followed by count of term in those docs)
+token_id_postings = {}  # Token ID => Postings List (List of docIDs followed by token count in those docs)
 
 with gzip.open(gzip_path, mode='rt') as gzip_file:
     document = None
