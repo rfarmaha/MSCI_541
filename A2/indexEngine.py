@@ -23,6 +23,11 @@ DOC_CLOSE_TAG = "</DOC>"
 DOC_NO_TAG = "<DOCNO>"
 HEADLINE_TAG = "<HEADLINE>"
 
+DOC_ID_NO_PATH = '/doc_id_no.p'
+TOKEN_ID_TOKEN_PATH = '/token_id_token.p'
+TOKEN_TOKEN_ID_PATH = '/token_token_id.p'
+TOKEN_ID_POSTINGS_PATH = '/token_id_postings.p'
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Retrieve documents and their associated metadata for the LA Times '
@@ -124,6 +129,11 @@ gzip_path, directory_path = parse_args()
 # Create the directory if it doesn't exist, else throw an error
 os.makedirs(directory_path, exist_ok=False)
 
+# Check if gzip exists
+if not os.path.exists(gzip_path):
+    print("GZIP file doesn't exist in the specified location! Please correct this issue.")
+    exit(1)
+
 # Create global dictionaries
 doc_id_no = {}
 token_id_token = {}
@@ -175,10 +185,10 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             raw_document.clear()
 
 # Create all pickles
-doc_id_no_path = directory_path + '/doc_id_no.p'
-token_id_token_path = directory_path + '/token_id_token.p'
-token_token_id_path = directory_path + '/token_token_id.p'
-token_id_postings_path = directory_path + '/token_id_postings.p'
+doc_id_no_path = directory_path + DOC_ID_NO_PATH
+token_id_token_path = directory_path + TOKEN_ID_TOKEN_PATH
+token_token_id_path = directory_path + TOKEN_TOKEN_ID_PATH
+token_id_postings_path = directory_path + TOKEN_ID_POSTINGS_PATH
 
 pickle.dump(doc_id_no, open(doc_id_no_path, 'wb'))
 pickle.dump(token_id_token, open(token_id_token_path, 'wb'))
