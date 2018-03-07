@@ -37,6 +37,7 @@ for r in results_files:
             measures = Measures(qrel, results[0], results[1])
             avg_precision = measures.get_average_precision()
             precision_at_10 = measures.get_precision_at_10()
+            ndcg_10, ndcg_1000 = measures.get_ndcg_10_1000()
             # TODO: Remove break below
             break
     except FileNotFoundError:
