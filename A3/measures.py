@@ -1,13 +1,30 @@
 from collections import OrderedDict
+import getDocument
 import math
+
+T_S = 4.4
+HALF_LIFE = 224
+P_C_1_R_1 = 0.64
+P_C_1_R_0 = 0.39
+P_S_1_R_1 = 0.77
+
 
 class Measures:
     def __init__(self, qrel, global_id, results):
         self.results = results
         self.qrel = qrel
         self.global_id = global_id
+        self.average_precision = self.__calculate_average_precision()
+        self.precision_at_10 = self.__calculate_precision_at_10()
+        self.ndcg_10, self.ndcg_1000 = self.__calculate_ndcg_10_1000()
+        self.time_based_gain = self.__calculate_time_based_gain()
+        self.measures_dict = {'average_precision': self.average_precision,
+                              'precision_at_10': self.precision_at_10,
+                              'ndcg_10': self.ndcg_10,
+                              'ndcg_1000': self.ndcg_1000,
+                              'time_based_gain': self.time_based_gain}
 
-    def get_average_precision(self):
+    def __calculate_average_precision(self):
         avg_precision = {}
 
         for query_id in self.qrel.get_query_ids():
@@ -28,7 +45,7 @@ class Measures:
         avg_precision = OrderedDict(sorted(avg_precision.items(), key=lambda t: t[0]))
         return avg_precision
 
-    def get_precision_at_10(self):
+    def __calculate_precision_at_10(self):
         precision_at_10 = {}
 
         for query_id in self.qrel.get_query_ids():
@@ -48,7 +65,7 @@ class Measures:
         precision_at_10 = OrderedDict(sorted(precision_at_10.items(), key=lambda t: t[0]))
         return precision_at_10
 
-    def get_ndcg_10_1000(self):
+    def __calculate_ndcg_10_1000(self):
         """Calculates NDCG@10 and NDCG@1000"""
 
         ndcg_10 = {}
@@ -80,6 +97,36 @@ class Measures:
         ndcg_10 = OrderedDict(sorted(ndcg_10.items(), key=lambda t: t[0]))
         ndcg_1000 = OrderedDict(sorted(ndcg_1000.items(), key=lambda t: t[0]))
         return ndcg_10, ndcg_1000
+
+    def __calculate_time_based_gain(self):
+
+        time_based_gain = {}
+
+        for query_id in self.qrel.get_query_ids():
+            tbg = 0
+            t_k = 0
+            result = self.results.get_result(query_id)
+            # Sort results by score
+            result.sort(key=lambda t: t.score, reverse=True)
+
+            for i, r in enumerate(result, start=1):
+                document = getDocument.retrieve_by_docno('../documents', r.doc_id)
+
+                if self.qrel.get_relevance(query_id, r.doc_id) > 0:
+                    p = P_C_1_R_1
+                    g_k = p * P_S_1_R_1
+                    t_k += T_S + (0.018 * document.length + 7.8) * p
+                    d_t_k = math.exp(-t_k*(math.log(2)/HALF_LIFE))
+                    gain = g_k * d_t_k
+                    tbg += gain
+                else:
+                    p = P_C_1_R_0
+                    t_k += T_S + (0.018 * document.length + 7.8) * p
+            time_based_gain[query_id] = tbg
+
+        time_based_gain = OrderedDict(sorted(time_based_gain.items(), key=lambda t: t[0]))
+        return time_based_gain
+
 
     def __get_idcg(self, relevant_docs, max_bound):
         idcg = 0
