@@ -232,7 +232,7 @@ if results_dir_path is not None:
     calculate_measures(qrel, results_dir_files, results_dir_path, output_location)
     calculate_summary_statistics(output_location)
 elif results_files is not None:
-    #calculate_measures_results_files(qrel, results_files, output_location)
-    #calculate_summary_statistics(output_location)
+    calculate_measures_results_files(qrel, results_files, output_location)
+    calculate_summary_statistics(output_location)
     if compare is not None:
         compare_results(compare[0], compare[1], output_location)
