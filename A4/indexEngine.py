@@ -136,7 +136,6 @@ def add_to_postings(doc_id, token_ids):
 
 gzip_path, directory_path, stem = parse_args()
 stem = stem.lower() == "true"
-print(stem)
 
 # Create the directory if it doesn't exist, else throw an error
 os.makedirs(directory_path, exist_ok=False)
