@@ -17,6 +17,7 @@ import time
 
 from document import Document
 from collections import Counter
+from porterStemmer import PorterStemmer
 
 DOC_OPEN_TAG = "<DOC>"
 DOC_CLOSE_TAG = "</DOC>"
@@ -34,8 +35,10 @@ def parse_args():
                                                  'gzip archive')
     parser.add_argument('gzip', metavar='GZIP_FILE', help='Path of LA Times .gzip file')
     parser.add_argument('directory', metavar='DOCUMENT_DIRECTORY', help='Directory to save documents and metadata')
+    parser.add_argument('--stem', metavar='STEM', help='Stem words using Porter Stemmer, default is false',
+                        required=False, default="False")
     args = parser.parse_args()
-    return args.gzip, args.directory
+    return args.gzip, args.directory, args.stem
 
 
 def create_raw_text_doc(doc_id, document, directory_path):
@@ -80,20 +83,27 @@ def build_doc_metadata(document):
     document.text = get_match_strip_tags(headline_match, text, re_strip_tags, re_strip_close_tags)
 
 
-def build_inversion_index(doc_id, document):
-    tokens = tokenize(document)
+def build_inversion_index(doc_id, document, stem):
+    tokens = tokenize(document, stem)
     document.length = len(tokens)
 
     token_ids = convert_tokens_to_ids(tokens)
     add_to_postings(doc_id, token_ids)
 
 
-def tokenize(document):
+def tokenize(document, stem):
     tokens = []
+    p = PorterStemmer()
     for text in document.headline, document.graphic, document.text:
         # Lowercase and split on non-alphanumerics
         text = text.lower()
         text_tokens = re.split('[\W]', text)
+        if stem:
+            stem_tokens = []
+            for t in text_tokens:
+                t = p.stem(t, 0, len(t) - 1)
+                stem_tokens.append(t)
+            text_tokens = stem_tokens
         tokens += text_tokens
 
     # Remove empty strings in resulting tokens list
@@ -124,7 +134,9 @@ def add_to_postings(doc_id, token_ids):
         token_id_postings[token_id].append(token_count)
 
 
-gzip_path, directory_path = parse_args()
+gzip_path, directory_path, stem = parse_args()
+stem = stem.lower() == "true"
+print(stem)
 
 # Create the directory if it doesn't exist, else throw an error
 os.makedirs(directory_path, exist_ok=False)
@@ -176,7 +188,7 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             build_doc_metadata(document)
 
             # Build in-memory inversion index
-            build_inversion_index(doc_id, document)
+            build_inversion_index(doc_id, document, stem)
 
             # Insert into directory as YY/MM/DD/NNNN.p
             create_raw_text_doc(doc_id, document, directory_path)
