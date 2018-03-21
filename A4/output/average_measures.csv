@@ -1,0 +1,2 @@
+Run Name,Mean Average Precision,Mean P@10,Mean NDCG@10,Mean NDCG@1000,Mean TBG
+rfarmaha-hw4-bm25-baseline,0.108,0.149,0.193,0.300,1.137

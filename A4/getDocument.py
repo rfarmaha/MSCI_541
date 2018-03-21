@@ -27,7 +27,7 @@ def retrieve_by_docno(path, param):
 
 
 def retrieve_by_id(path, param):
-    """Retrieve documetn and associated metadata from internal ID"""
+    """Retrieve document and associated metadata from internal ID"""
     with open(path + IDX_PATH, 'rb') as file:
         doc_id_no = pickle.load(file)
         docno = doc_id_no[int(param)]
