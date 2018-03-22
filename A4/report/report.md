@@ -3,11 +3,13 @@ Ramandeep Farmaha 20516974
 
 ## Problem 1
 
-Two documents can have the same retrieval score and be relevant and non-relevant respectively if one of the documents
-has a shorter length but less term frequency, while the other document has a much longer length and greater term
-frequency, allowing both documents to have the same term frequency index. The shorter document could potentially be not
-relevant, because it only shows the term once or twice, but because of its shorter length (i.e. perhaps 200 words), it 
-could have the same term frequency index as a much longer document (i.e. 8000 words) that repeats the term 20 times.
+Two documents can have the same retrieval score and be relevant and non-relevant respectively if one of the documents contains
+a higher count of a more important term in the query than the other document. For example, for the query "President Lincoln",
+the term "President" appears in 250,000 documents, while "Lincoln" appears in 500. When a user submits the query,
+"Lincoln" will have a much higher idf weight, since it occurs far fewer than "President". As a result, if two documents a returned,
+one document that is about the Lincoln Town Car might repeat the word "Lincoln" much more frequently than another document
+that is an article about President Lincoln. As a result, the first article, which is completely irrelevant to the query,
+may achieve the same BM25 retrieval score as the relevant article about President Lincoln. 
 
 ### Problem 2
 
@@ -46,8 +48,15 @@ Matrix = 131896 * 247031 = 32,582,400,776 cells
 ```
 If each cell is 4 bytes, this would take up a total memory space of:
 ```
-memory_size = 130,329,603,104 bytes = 130.33 GB
+    memory_size = 130,329,603,104 bytes = 130.33 GB
 ```
+
+There are a total of `31,916,824` doc_ids for postings in the postings list. Thus,
+```
+Empty cells = 32,582,400,776 - 31,916,824 = 32,550,483,952
+memory_savings = 32,550,483,952*4 = 130,201,935,808 bytes = 130.20 GB
+```
+
 
 ### Problem 6
 
@@ -68,6 +77,9 @@ would greatly reduce the performance of the retrieval system.
 |----------------------------|------------------------|-----------|--------------|----------------|----------| 
 | rfarmaha-hw4-bm25-stem     | 0.251                  | 0.284     | 0.374        | 0.486          | 2.047    | 
 | rfarmaha-hw4-bm25-baseline | 0.208                  | 0.251     | 0.333        | 0.425          | 1.766    | 
+
+The results above indicate that all evaluation measures experienced significant improvement from the baseline after
+performing stemming.
 
 ##### B: Statistical Significance Tests
 
