@@ -27,20 +27,20 @@ Thus, the term frequency, represented in the numerator, is normalized by the len
 in the denominator. This achieves a similar effect to computing the logarithm of the term frequency in the document,
 which is used in the tf-idf calculation.
  
- ### Problem 3
+### Problem 3
  
 Stemming would speed up the retrieval speed, as there would be fewer terms indexed, producing a much thinner vocabulary.
 For example, the words: "fish", "fishes", "fishing" would all be stemmed to "fish", thus reducing the number of words 
 that involve fish from 3 to 1 in the vocabulary. When a query for "fishes" appears, its stem (i.e. "fish") would be
 retrieved from the vocabulary.
  
- ### Problem 4
+### Problem 4
  
 Words in queries that are not contained in the document collection are ignored by the retrieval model. In practice,
 this means that the model assigns a score of 0 for the query term that doesn't exist in the document collection.
  
- ### Problem 5
- ```
+### Problem 5
+```
 Total document length = 131,896
 Total vocabulary size = 247,031
 
@@ -48,13 +48,13 @@ Matrix = 131896 * 247031 = 32,582,400,776 cells
 ```
 If each cell is 4 bytes, this would take up a total memory space of:
 ```
-    memory_size = 130,329,603,104 bytes = 130.33 GB
+    memory_size = 130,329,603,104 bytes = 121.38 GB
 ```
 
 There are a total of `31,916,824` doc_ids for postings in the postings list. Thus,
 ```
 Empty cells = 32,582,400,776 - 31,916,824 = 32,550,483,952
-memory_savings = 32,550,483,952*4 = 130,201,935,808 bytes = 130.20 GB
+memory_savings = 32,550,483,952*4 = 130,201,935,808 bytes = 121.26 GB
 ```
 
 
