@@ -57,7 +57,8 @@ def calculate_bm25(topic_id, topic, token_token_id, postings_list, doc_id_no, av
         token_idf = math.log(a)
 
         # Calculate tf for docs
-        for i, doc_id in enumerate(postings[::2]):
+        for i in range(0, len(postings), 2):
+            doc_id = postings[i]
             doc_no = doc_id_no[doc_id]
             document = getDocument.retrieve_by_docno(docs_path, doc_no)
 
