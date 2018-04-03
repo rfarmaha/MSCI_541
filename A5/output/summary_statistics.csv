@@ -1,0 +1,6 @@
+Effectiveness Measure,Best Run Score,Second Best Run Score,Relative Percent Improvement,Two-sided Paired t-Test p-value
+Mean Average Precision,0.251,0.208,20.673%,0.005181800894604008
+Mean P@10,0.284,0.251,13.147%,0.1251062406735981
+Mean NDCG@10,0.374,0.333,12.312%,0.09021119902830947
+Mean NDCG@1000,0.486,0.425,14.353%,0.001618024355585357
+Mean TBG,2.047,1.766,15.912%,0.0005389512456214771

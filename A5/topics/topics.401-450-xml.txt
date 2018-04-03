@@ -1,0 +1,1037 @@
+<topics>
+<topic>
+
+<number>401</number>
+<title>foreign minorities, Germany 
+
+</title>
+<description> 
+What language and cultural differences impede the integration 
+of foreign minorities in Germany?
+
+</description>
+<narrative> 
+A relevant document will focus on the causes of the lack of
+integration in a significant way; that is, the mere mention of
+immigration difficulties is not relevant.  Documents that discuss
+immigration problems unrelated to Germany are also not relevant.  
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>402</number>
+<title>behavioral genetics 
+
+</title>
+<description> 
+What is happening in the field of behavioral genetics,
+the study of the relative influence of genetic
+and environmental factors on an individual's behavior
+or personality?
+
+</description>
+<narrative> 
+Documents describing genetic or environmental factors relating
+to understanding and preventing substance abuse and addictions
+are relevant.  Documents pertaining to attention deficit disorders
+tied in with genetics are also relevant, as are genetic disorders 
+affecting hearing or muscles.  The genome project is relevant
+when tied in with behavior disorders (i.e., mood disorders,
+Alzheimer's disease). 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>403</number>
+<title>osteoporosis 
+
+</title>
+<description> 
+Find information on the effects of the dietary intakes
+of potassium, magnesium and fruits and vegetables as
+determinants of bone mineral density in elderly men
+and women thus preventing osteoporosis (bone decay). 
+
+</description>
+<narrative> 
+A relevant document may include one or more of the
+dietary intakes in the prevention of osteoporosis.
+Any discussion of the disturbance of nutrition and
+mineral metabolism that results in a decrease in 
+bone mass is also relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>404</number>
+<title>Ireland, peace talks 
+
+</title>
+<description> 
+How often were the peace talks in Ireland delayed
+or disrupted as a result of acts of violence?
+
+</description>
+<narrative> 
+Any interruptions to the peace process not directly
+attributable to acts of violence are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>405</number>
+<title>cosmic events 
+
+</title>
+<description> 
+What unexpected or unexplained cosmic events or
+celestial phenomena, such as radiation and 
+supernova outbursts or new comets, have been detected?
+
+</description>
+<narrative> 
+New theories or new interpretations concerning 
+known celestial objects made as a result of new 
+technology are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>406</number>
+<title>Parkinson's disease 
+
+</title>
+<description> 
+What is being done to treat the symptoms of 
+Parkinson's disease and keep the patient 
+functional as long as possible?
+
+</description>
+<narrative> 
+A relevant document identifies a drug or treatment 
+program utilized in patient care and provides 
+an indication of success or failure.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>407</number>
+<title>poaching, wildlife preserves 
+
+</title>
+<description> 
+What is the impact of poaching on 
+the world's various wildlife preserves? 
+
+</description>
+<narrative> 
+A relevant document must discuss poaching in wildlife
+preserves, not in the wild itself.  Also deemed relevant
+is evidence of preventive measures being taken by local
+authorities.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>408</number>
+<title>tropical storms 
+
+</title>
+<description> 
+What tropical storms (hurricanes and typhoons) have
+caused significant property damage and loss of life?
+
+</description>
+<narrative> 
+The date of the storm, the area affected, and the extent of 
+damage/casualties are all of interest.  Documents that describe
+the damage caused by a tropical storm as "slight", "limited", or
+"small" are not relevant. 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>409</number>
+<title>legal, Pan Am, 103 
+
+</title>
+<description> 
+What legal actions have resulted from the destruction
+of Pan Am Flight 103 over Lockerbie, Scotland, on
+December 21, 1988?  
+
+</description>
+<narrative> 
+Documents describing any charges, claims, or fines 
+presented to or imposed by any court or tribunal are
+relevant, but documents that discuss charges made in
+diplomatic jousting are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>410</number>
+<title>Schengen agreement 
+
+</title>
+<description> 
+Who is involved in the Schengen agreement to eliminate border
+controls in Western Europe and what do they hope to accomplish?
+
+</description>
+<narrative> 
+Relevant documents will contain any information about the
+actions of signatories of the Schengen agreement such as:
+measures to eliminate border controls (removal of traffic
+obstacles, lifting of traffic restrictions); implementation
+of the information system data bank that contains unified
+visa issuance procedures; or strengthening of border controls
+at the external borders of the treaty area in exchange for 
+free movement at the internal borders.  Discussions of border 
+crossovers for business purposes are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>411</number>
+<title>salvaging, shipwreck, treasure 
+
+</title>
+<description> 
+Find information on shipwreck salvaging: the
+recovery or attempted recovery of treasure from
+sunken ships.
+
+</description>
+<narrative> 
+A relevant document will provide information on
+the actual locating and recovery of treasure; 
+on the technology which makes possible the discovery,
+location and investigation of wreckages which 
+contain or are suspected of containing treasure; or
+on the disposition of the recovered treasure. 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>412</number>
+<title>airport security 
+
+</title>
+<description> 
+What security measures are in effect or are proposed
+to go into effect in airports?
+
+</description>
+<narrative> 
+A relevant document could identify a specific airport
+and describe the security measures already in effect 
+or proposed for use at that airport.  Relevant items
+could also describe a failure of security that was
+cited as a contributing cause of a tragedy which came 
+to pass or which was later averted.  Comparisons between
+and among airports based on the effectiveness of the
+security of each are also relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>413</number>
+<title>steel production 
+
+</title>
+<description> 
+What are new methods of producing steel?
+
+</description>
+<narrative> 
+Relevant documents will discuss the processes adapted
+by entrepreneurs who have organized so-called "minimills"
+and are producing steel by methods which differ from
+the old blast furnace method of production.  Documents 
+that identify the new companies, the problems they have
+have encountered, and/or their successes or failures in
+the national and international markets are also relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>414</number>
+<title>Cuba, sugar, exports 
+
+</title>
+<description> 
+How much sugar does Cuba export and which
+countries import it?
+
+</description>
+<narrative> 
+A relevant document will provide information
+regarding Cuba's sugar trade.  Sugar production
+statistics are not relevant unless exports
+are mentioned explicitly.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>415</number>
+<title>drugs, Golden Triangle 
+
+</title>
+<description> 
+What is known about drug trafficking in the
+"Golden Triangle", the area where Burma,
+Thailand and Laos meet?
+
+</description>
+<narrative> 
+A relevant document will discuss drug
+trafficking in the Golden Triangle,
+including organizations that produce or
+distribute the drugs; international efforts
+to combat the traffic; or the quantities of
+drugs produced in the area.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>416</number>
+<title>Three Gorges Project 
+
+</title>
+<description> 
+What is the status of The Three Gorges Project?
+
+</description>
+<narrative> 
+A relevant document will provide the projected
+date of completion of the project, its estimated
+total cost, or the estimated electrical output of
+the the finished project.  Discussions of the
+social, political, or ecological impact of the
+project are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>417</number>
+<title>creativity 
+
+</title>
+<description> 
+Find ways of measuring creativity.
+
+</description>
+<narrative> 
+Relevant items include definitions of creativity,
+descriptions of characteristics associated with
+creativity, and factors linked to creativity. 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>418</number>
+<title>quilts, income 
+
+</title>
+<description> 
+In what ways have quilts been used to generate income?
+
+</description>
+<narrative> 
+Documents mentioning quilting books, quilting classes,
+quilted objects, and museum exhibits of quilts are all relevant.  
+Documents that discuss AIDs quilts are irrelevant, unless 
+there is specific mention that the quilts are being used 
+for fundraising.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>419</number>
+<title>recycle, automobile tires 
+
+</title>
+<description> 
+What new uses have been developed for old
+automobile tires as a means of tire recycling?
+
+</description>
+<narrative> 
+A relevant document must show advantageous uses of
+recycled tires, such as:  destructive distillation of 
+scrap rubber for valuable chemicals, reef building
+for fish habitats, filler or binder in asphalt
+roadway mixes, and burning in a controlled 
+environment for heat generation.  
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>420</number>
+<title>carbon monoxide poisoning 
+
+</title>
+<description> 
+How widespread is carbon monoxide poisoning on 
+a global scale?
+
+</description>
+<narrative> 
+Relevant documents will contain data on
+what carbon monoxide poisoning is, symptoms,
+causes, and/or prevention.  Advertisements for
+carbon monoxide protection products or services 
+are not relevant.  Discussions of auto emissions
+and air pollution are not relevant even though
+they can contain carbon monoxide.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>421</number>
+<title>industrial waste disposal 
+
+</title>
+<description> 
+How is the disposal of industrial waste being accomplished
+by industrial management throughout the world? 
+
+</description>
+<narrative> 
+Documents that discuss the disposal, storage, or management
+of industrial waste---both standard and hazardous---are
+relevant.  However, documents that discuss disposal or
+storage of nuclear or radioactive waste, or the illegal
+shipment or dumping of waste to avoid legal disposal
+methods are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>422</number>
+<title>art, stolen, forged
+
+</title>
+<description> 
+What incidents have there been of stolen or forged art?
+
+</description>
+<narrative> 
+Instances of stolen or forged art in any media are relevant. 
+Stolen mass-produced things, even though they might be 
+decorative, are not relevant (unless they are mass-
+produced art reproductions). Pirated software, music, movies, 
+etc. are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>423</number>
+<title>Milosevic, Mirjana Markovic 
+
+</title>
+<description> 
+Find references to Milosevic's wife, Mirjana Markovic.
+
+</description>
+<narrative> 
+Any mention of the Serbian president's wife is
+relevant, even if she is not named.  She may be referred to
+by her nickname, Mira.  A general mention of his family, 
+without specifying his wife, is not relevant. 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>424</number>
+<title>suicides 
+
+</title>
+<description> 
+Give examples of alleged suicides that aroused suspicion
+of the death actually being murder.
+
+</description>
+<narrative> 
+The intent of this query is to find criminal murders that 
+are being disguised as suicide, but assisted suicides done
+out of compassion would be relevant if someone refers to 
+them as murder.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>425</number>
+<title>counterfeiting money 
+
+</title>
+<description> 
+What counterfeiting of money is being done in
+modern times?
+
+</description>
+<narrative> 
+Relevant documents must cite actual instances
+of counterfeiting.   Anti-counterfeiting measures by
+themselves are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>426</number>
+<title>law enforcement, dogs 
+
+</title>
+<description> 
+Provide information on the use of dogs worldwide for 
+law enforcement purposes.
+
+</description>
+<narrative> 
+Relevant items include specific information on the
+use of dogs during an operation.  Training of dogs
+and their handlers are also relevant.  
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>427</number>
+<title>UV damage, eyes 
+
+</title>
+<description> 
+Find documents that discuss the damage ultraviolet (UV)
+light from the sun can do to eyes.
+
+</description>
+<narrative> 
+A relevant document will discuss diseases that result
+from exposure of the eyes to UV light, treatments
+for the damage, and/or education programs that help
+prevent damage.  Documents discussing treatment
+methods for cataracts and ocular melanoma are relevant
+even when a specific cause is not mentioned.  However,
+documents that discuss radiation damage from nuclear
+sources or lasers are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>428</number>
+<title>declining birth rates 
+
+</title>
+<description> 
+Do any countries other than the U.S. and China have
+a declining birth rate? 
+
+</description>
+<narrative> 
+To be relevant, a document will name a country other than the U.S. 
+or China in which the birth rate fell from the rate of the
+previous year.  The decline need not have occurred in more
+than the one preceding year.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>429</number>
+<title>Legionnaires' disease 
+
+</title>
+<description> 
+Identify outbreaks of Legionnaires' disease.
+
+</description>
+<narrative> 
+To be relevant, a document must discuss a specific outbreak
+of Legionnaires' disease.  Documents that address prevention of
+or cures for the disease without citing a specific case are 
+not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>430</number>
+<title>killer bee attacks 
+
+</title>
+<description> 
+Identify instances of attacks on humans by Africanized 
+(killer) bees.  
+
+</description>
+<narrative> 
+Relevant documents must cite a specific instance of a human
+attacked by killer bees.  Documents that note migration patterns
+or report attacks on other animals are not relevant unless they
+also cite an attack on a human.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>431</number>
+<title>robotic technology 
+
+</title>
+<description> 
+What are the latest developments in robotic technology?
+
+</description>
+<narrative> 
+A relevant document will contain information on 
+current applications of robotic technology.  Discussions
+of robotics research or simulations of robots are
+not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>432</number>
+<title>profiling, motorists, police 
+
+</title>
+<description> 
+Do police departments use "profiling" to stop motorists?
+
+</description>
+<narrative> 
+A relevant document will report or discuss police department 
+criteria for identifying motorists considered likely to be
+carrying contraband.  Documents discussing the detention of
+individuals by foreign security forces are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>433</number>
+<title>Greek, philosophy, stoicism 
+
+</title>
+<description> 
+Is there contemporary interest in the Greek
+philosophy of stoicism?
+
+</description>
+<narrative> 
+Actual references to the philosophy or philosophers, 
+productions of Greek stoic plays, and new "stoic" 
+artistic productions are all relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>434</number>
+<title>Estonia, economy 
+
+</title>
+<description> 
+What is the state of the economy of Estonia?
+
+</description>
+<narrative> 
+Documents that give concrete economic information
+such as economic statistics, entering economic unions
+and treaties, or monetary performance are relevant,
+as are discussions of economic issues such as 
+transportation or pollution.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>435</number>
+<title>curbing population growth 
+
+</title>
+<description> 
+What measures have been taken worldwide and what 
+countries have been effective in curbing
+population growth?
+
+</description>
+<narrative> 
+A relevant document must describe an actual case in which 
+population measures have been taken and their results are known.
+The reduction measures must have been actively pursued;
+that is, passive events such as disease or famine
+involuntarily reducing the population are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>436</number>
+<title>railway accidents 
+
+</title>
+<description> 
+What are the causes of railway accidents throughout
+the world? 
+
+</description>
+<narrative> 
+A relevant document provides data on railway accidents
+of any sort (i.e., locomotive, trolley, streetcar) where
+either the railroad system or the vehicle or pedestrian
+involved caused the accident.  Documents that discuss
+railroading in general, new rail lines, new technology
+for safety, and safety and accident prevention 
+are not relevant, unless an actual accident is described.  
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>437</number>
+<title>deregulation, gas, electric 
+
+</title>
+<description> 
+What has been the experience of residential utility
+customers following deregulation of gas and electric?
+
+</description>
+<narrative> 
+Documents that discuss privatization of government-
+owned utilities alone are not relevant.  Also, not
+relevant are documents that discuss the deregulation 
+of utilities for commercial customers.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>438</number>
+<title>tourism, increase 
+
+</title>
+<description> 
+What countries are experiencing an increase in
+tourism?
+
+</description>
+<narrative> 
+A relevant document will name a country that
+has experienced an increase in tourism.
+The increase must represent the nation as a whole
+and tourism in general, not be restricted to only
+certain regions of the country or to some specific
+type of tourism (e.g., adventure travel).  Documents
+discussing only projected increases are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>439</number>
+<title>inventions, scientific discoveries 
+
+</title>
+<description> 
+What new inventions or scientific discoveries have been
+made?  
+
+</description>
+<narrative> 
+The word "new" in the description is defined as occurring
+in the 1990s.  Documents that indicate a "recent" 
+invention or scientific discovery are considered relevant.
+Discoveries made in astronomy or any scientific discoveries
+that are not patentable are not relevant.  
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>440</number>
+<title>child labor 
+
+</title>
+<description> 
+What steps are being taken by governments or corporations 
+to eliminate abuse of child labor?
+
+</description>
+<narrative> 
+A relevant document identifies an action taken by either 
+a private commercial corporation or governmental organization 
+to reduce or eliminate the use of child labor in manufacturing 
+operations.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>441</number>
+<title>Lyme disease 
+
+</title>
+<description> 
+How do you prevent and treat Lyme disease?
+
+</description>
+<narrative> 
+Documents that discuss current prevention and
+treatment techniques for Lyme disease are
+relevant.  Reports of research on new
+treatments of the disease are also relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>442</number>
+<title>heroic acts 
+
+</title>
+<description> 
+Find accounts of selfless heroic acts by individuals or 
+small groups for the benefit of others or a cause.
+
+</description>
+<narrative> 
+Relevant documents will contain a description of specific
+acts.  General statements concerning heroic acts are not
+relevant. 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>443</number>
+<title>U.S., investment, Africa 
+
+</title>
+<description> 
+What is the extent of U.S. (government and private)
+investment in sub-Saharan Africa?
+
+</description>
+<narrative> 
+All references to U.S. Governmental and private assistance
+to sub-Saharan Africa are relevant.  Documents discussing
+contributions by reason of U.S. membership in international
+aid organizations are also relevant. 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>444</number>
+<title>supercritical fluids
+
+</title>
+<description> 
+What are the potential uses for supercritical fluids
+as an environmental protection measure?
+
+</description>
+<narrative> 
+To be relevant, a document must indicate that the 
+fluid involved is achieved by a process of pressurization
+producing the supercritical fluid.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>445</number>
+<title>women clergy 
+
+</title>
+<description> 
+What other countries besides the United States are considering 
+or have approved women as clergy persons?
+
+</description>
+<narrative> 
+To be relevant, a document must indicate either a country 
+where a woman has been installed as clergy or a country
+that is considering such an installation.  The clergy position
+must be as church pastor rather than some other church capacity
+(e.g., nun or choir member). 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>446</number>
+<title>tourists, violence 
+
+</title>
+<description> 
+Where are tourists likely to be subjected to
+acts of violence causing bodily harm or death?
+
+</description>
+<narrative> 
+A relevant document must contain accounts of known 
+harm to tourists.  Evidence of single, isolated
+incidents are not relevant.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>447</number>
+<title>Stirling engine 
+
+</title>
+<description> 
+What new developments and applications are there
+for the Stirling engine?
+
+</description>
+<narrative> 
+Any discussion of new developments and applications of the
+Stirling engine (also known as the Stirling cycle) are relevant. 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>448</number>
+<title>ship losses 
+
+</title>
+<description> 
+Identify instances in which weather was a main or contributing
+factor in the loss of a ship at sea.  
+
+</description>
+<narrative> 
+Any ship loss due to weather is relevant, either in international
+or coastal waters.
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>449</number>
+<title>antibiotics ineffectiveness 
+
+</title>
+<description> 
+What has caused the current ineffectiveness of
+antibiotics against infections and what is
+the prognosis for new drugs?
+
+</description>
+<narrative> 
+To be relevant, a document must discuss the reasons or 
+causes for the ineffectiveness of current antibiotics.
+Relevant documents may also include efforts by pharmaceutical
+companies and federal government agencies to find new cures, 
+updating current testing phases, new drugs being tested,
+and the prognosis for the availability of new and effective
+antibiotics. 
+
+</narrative>
+</topic>
+
+<topic>
+
+<number>450</number>
+<title>King Hussein, peace 
+
+</title>
+<description> 
+How significant a figure over the years was the late
+Jordanian King Hussein in furthering peace in the 
+Middle East?  
+
+</description>
+<narrative> 
+A relevant document must include mention of Israel;
+King Hussein himself as opposed to other Jordanian
+officials; discussion of the King's on-going, previous 
+or upcoming efforts; and efforts pertinent to the peace 
+process, not merely Jordan's relationship with other 
+middle-east countries or the U.S. 
+
+</narrative>
+</topic>
+</topics>
