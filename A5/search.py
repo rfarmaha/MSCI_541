@@ -6,7 +6,7 @@ Python Version: 3.4
 
 Submits query to document engine that performs BM25 retrieval and displays top 10 ranked results to the user
 """
-import argparse
+
 import bm25
 import getDocument
 import queryBiasedSummary
@@ -37,7 +37,7 @@ def handle_query(query, token_token_id, token_id_postings, doc_id_no, doc_no_met
     i = 1
     for doc_no, score in o_dict.items():
         document = doc_no_metadata[doc_no]
-        summary = queryBiasedSummary.summarize(query, document.text)
+        summary = queryBiasedSummary.summarize(query, " ".join([document.text, document.graphic]))
         if not document.headline:
             document.headline = "{}...".format(summary[:50])
         print("{}. {}({})".format(i, document.headline.replace('\n', ''), document.date))
