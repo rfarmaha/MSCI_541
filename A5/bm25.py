@@ -1,5 +1,4 @@
 import argparse
-import getDocument
 import math
 import os
 import pickle
@@ -11,8 +10,8 @@ from porterStemmer import PorterStemmer
 TOKEN_ID_TOKEN_PATH = 'token_id_token.p'
 TOKEN_TOKEN_ID_PATH = 'token_token_id.p'
 TOKEN_ID_POSTINGS_PATH = 'token_id_postings.p'
+DOC_NO_METADATA_PATH = '/doc_no_metadata.p'
 DOC_ID_NO_PATH = '/doc_id_no.p'
-DOCUMENTS_PATH = '../documents/'
 TOPICS_PATH = '../topics.p'
 RESULTS_PATH = 'bm25-results/'
 BASELINE = 'rfarmaha-hw4-bm25-baseline.txt'
@@ -33,7 +32,7 @@ def parse_args():
     return args.documents, args.stem
 
 
-def calculate_bm25(topic_id, topic, token_token_id, postings_list, doc_id_no, average_doc_length, stem, docs_path):
+def calculate_bm25(topic_id, topic, token_token_id, postings_list, doc_id_no, doc_no_metadata, average_doc_length, stem, docs_path):
     """Calculates BM25 for a topic against all LATimes Documents, returns ordered dictionary of doc_no to ranking"""
     query_tokens = tokenize(topic)
     doc_no_score = {}
@@ -60,7 +59,7 @@ def calculate_bm25(topic_id, topic, token_token_id, postings_list, doc_id_no, av
         for i in range(0, len(postings), 2):
             doc_id = postings[i]
             doc_no = doc_id_no[doc_id]
-            document = getDocument.retrieve_by_docno(docs_path, doc_no)
+            document = doc_no_metadata[doc_no]
 
             fi = postings[i+1]
             K = K1 * ((1 - B) + B * (document.length / average_doc_length))
@@ -99,27 +98,25 @@ if __name__ == "__main__":
     # Retrieve list of topics
     topics = pickle.load(open(TOPICS_PATH, 'rb'))
 
-
     # Import relevant dicts of tokens to postings
     print("Importing relevant dicts")
     token_id_postings = pickle.load(open(directory_path + TOKEN_ID_POSTINGS_PATH, 'rb'))
     token_id_token = pickle.load(open(directory_path + TOKEN_ID_TOKEN_PATH, 'rb'))
     token_token_id = pickle.load(open(directory_path + TOKEN_TOKEN_ID_PATH, 'rb'))
     doc_id_no = pickle.load(open(directory_path + DOC_ID_NO_PATH, 'rb'))
+    doc_no_metadata = pickle.load(open(directory_path + DOC_NO_METADATA_PATH, 'rb'))
     print("Completed import")
 
     # Calculate average doc length in collection
     print("Calculating average length of documents")
-    average_length = sum([getDocument.retrieve_by_docno(DOCUMENTS_PATH, doc_no).length for doc_id, doc_no in doc_id_no.items()]) / len(doc_id_no)
-
-
+    average_length = sum([doc_no_metadata[doc_no].length for doc_id, doc_no in doc_id_no.items()]) / len(doc_id_no)
     print(average_length)
 
     filepath = RESULTS_PATH + PORTER_STEM if stem else RESULTS_PATH + BASELINE
 
     with open(filepath, 'w') as file:
         for topic_id, topic in topics.items():
-            o_dict = calculate_bm25(topic_id, topic, token_token_id, token_id_postings, doc_id_no, average_length, stem, directory_path)
+            o_dict = calculate_bm25(topic_id, topic, token_token_id, token_id_postings, doc_id_no, doc_no_metadata, average_length, stem, directory_path)
 
             # Input top 1000 documents along with their scores into results file
             limit = min(len(o_dict), 1000)

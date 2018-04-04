@@ -28,6 +28,7 @@ DOC_ID_NO_PATH = '/doc_id_no.p'
 TOKEN_ID_TOKEN_PATH = '/token_id_token.p'
 TOKEN_TOKEN_ID_PATH = '/token_token_id.p'
 TOKEN_ID_POSTINGS_PATH = '/token_id_postings.p'
+DOC_NO_METADATA_PATH = '/doc_no_metadata.p'
 
 
 def parse_args():
@@ -150,6 +151,7 @@ doc_id_no = {}
 token_id_token = {}
 token_token_id = {}
 token_id_postings = {}  # Token ID => Postings List (List of docIDs followed by token count in those docs)
+doc_no_metadata = {}
 
 with gzip.open(gzip_path, mode='rt') as gzip_file:
     document = None
@@ -192,6 +194,10 @@ with gzip.open(gzip_path, mode='rt') as gzip_file:
             # Insert into directory as YY/MM/DD/NNNN.p
             create_raw_text_doc(doc_id, document, directory_path)
 
+            # Remove the raw_document text from the object and only store the metadata
+            document.raw_document = ""
+            doc_no_metadata[document.docno] = document
+
             # clear the raw document list
             raw_document.clear()
 
@@ -200,8 +206,10 @@ doc_id_no_path = directory_path + DOC_ID_NO_PATH
 token_id_token_path = directory_path + TOKEN_ID_TOKEN_PATH
 token_token_id_path = directory_path + TOKEN_TOKEN_ID_PATH
 token_id_postings_path = directory_path + TOKEN_ID_POSTINGS_PATH
+doc_no_metadata_path = directory_path + DOC_NO_METADATA_PATH
 
 pickle.dump(doc_id_no, open(doc_id_no_path, 'wb'))
 pickle.dump(token_id_token, open(token_id_token_path, 'wb'))
 pickle.dump(token_token_id, open(token_token_id_path, 'wb'))
 pickle.dump(token_id_postings, open(token_id_postings_path, 'wb'))
+pickle.dump(doc_no_metadata, open(doc_no_metadata_path, 'wb'))

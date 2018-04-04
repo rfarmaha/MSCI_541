@@ -63,11 +63,16 @@ def summarize(query, text):
                 k_max = max(k, k_max)
             else:
                 contiguous = False
-        score = c + d + k + l
+        score = 2*c + 5*d + 3*k + l
         heapq.heappush(qb_sentences, QueryBiasedSentence(sentence, score))
 
-    while qb_sentences:
+    summary_list = []
+    i = 0
+    while qb_sentences and i < 2:
         sent = heapq.heappop(qb_sentences)
-        print(sent.score, sent.text)
+        summary_list.append(sent.text)
+        i += 1
+    return " ".join(summary_list)
+
 
 
