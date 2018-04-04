@@ -12,6 +12,7 @@ import getDocument
 import queryBiasedSummary
 import pickle
 import time
+import html
 
 DIRECTORY_PATH = "../documents_w_metadata/"
 TOKEN_ID_TOKEN_PATH = 'token_id_token.p'
@@ -40,8 +41,8 @@ def handle_query(query, token_token_id, token_id_postings, doc_id_no, doc_no_met
         summary = queryBiasedSummary.summarize(query, " ".join([document.text, document.graphic]))
         if not document.headline:
             document.headline = "{}...".format(summary[:50])
-        print("{}. {}({})".format(i, document.headline.replace('\n', ''), document.date))
-        print("{} ({})\n".format(summary, doc_no))
+        print("{}. {}({})".format(i, html.unescape(document.headline.replace('\n', '')), document.date))
+        print("{} ({})\n".format(html.unescape(summary), doc_no))
         rank_doc_no[i] = doc_no
         i += 1
         if i > limit:
@@ -73,7 +74,9 @@ def user_query():
             rank = int(prompt)
             if len(rankings) >= rank > 0:
                 doc_no = rankings[rank]
-                print(getDocument.retrieve_by_docno(DIRECTORY_PATH, doc_no).text)
+                document = getDocument.retrieve_by_docno(DIRECTORY_PATH, doc_no)
+                print("{} ({})".format(document.headline, doc_no))
+                print(document.text)
             else:
                 print("Invalid response, try again.")
         except ValueError:
